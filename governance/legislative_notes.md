@@ -1,63 +1,66 @@
 # Legislative Framework Notes
-## Project Phantom — /governance
+## Project Phantom · /governance · https://github.com/DSUcyberops/csc727
 
-This document provides detailed notes underlying the jurisdictional comparison in Table 3 of the paper and supports the governance analysis in Section 7.
-
----
-
-## Overview: The Governance Landscape
-
-As of early 2026, no jurisdiction has enacted a comprehensive deepfake governance framework that simultaneously addresses all four core governance challenges identified in this paper:
-
-1. **Transparency** — mandatory disclosure of AI-generated content to end users
-2. **Watermarking** — technical embedding of provenance signals at generation time
-3. **Platform accountability** — positive obligations on platforms hosting or distributing synthetic media
-4. **Cross-border enforcement** — mechanisms to address the transnational character of production and distribution
-
-The EU AI Act comes closest to addressing all four, but its watermarking and transparency enforcement is still being phased in and does not yet apply extraterritorially to all relevant actors.
+Detailed analysis underlying Table 3 in the paper. Supports §7 (Governance and Mitigation) and the cross-cutting analysis in §10.3. Organized around the paper's four-criterion governance assessment framework.
 
 ---
 
-## Jurisdiction-by-Jurisdiction Analysis
+## The Four-Criterion Assessment Framework
+
+Each jurisdiction is evaluated against four criteria derived from the paper's integrated three-dimension analytical framework (§4.2):
+
+| Criterion | Definition | Why it matters |
+|---|---|---|
+| **Transparency** | Mandatory disclosure of AI-generated content to end users | Without transparency, the liar's dividend (§8.2) cannot be countered — users cannot apply appropriate skepticism to content they cannot identify as synthetic |
+| **Watermarking** | Technical provenance embedding at generation time | Creates an upstream signal that survives distribution and enables attribution; C2PA provides the open standard but mandating it requires governance |
+| **Platform accountability** | Positive obligations on platforms — not merely prohibitions on individuals | Individual prohibitions cannot address industrial-scale synthetic media production; platforms are the only actors with the reach to enforce at scale |
+| **Cross-border enforcement** | Mechanisms addressing transnational production and distribution | Deepfake production and distribution is inherently transnational; jurisdiction-specific frameworks create predictable gaps |
+
+---
+
+## Jurisdiction Analysis
 
 ### United States (Federal)
 
 **Status:** No federal deepfake-specific legislation enacted as of early 2026.
 
 **Legislative history:**
-- *DEFIANCE Act (2024):* Would create a federal civil cause of action for victims of non-consensual intimate deepfakes. Passed Senate; stalled in House as of review date.
-- *NO FAKES Act (2024):* Would create a federal right of publicity for digital replicas of voice and likeness. Bipartisan support; not enacted.
-- *Protect Elections from Deceptive AI Act:* Would prohibit materially deceptive AI-generated content in federal election advertising. Not enacted.
+- *DEFIANCE Act (2024):* Federal civil remedy for non-consensual intimate deepfakes. Passed Senate; stalled in House as of review date.
+- *NO FAKES Act (2024):* Federal right of publicity for digital voice and likeness replicas. Bipartisan support; not enacted.
+- *Protect Elections from Deceptive AI Act:* Prohibition on materially deceptive AI-generated content in federal election advertising. Not enacted.
 
-**Existing applicable law:**
-- Section 230 of the Communications Decency Act provides significant platform immunity from third-party content liability, limiting platform accountability for deepfake distribution
-- FTC Act Section 5 (unfair/deceptive acts) provides some basis for action against fraudulent deepfakes, but enforcement is slow and case-by-case
-- State laws (see California, Texas below) fill some gaps but create inconsistent national coverage
+**Applicable existing law:**
+- Section 230 (CDA): Platform immunity from third-party content liability fundamentally limits platform accountability — the most significant structural barrier to effective U.S. deepfake governance
+- FTC Act §5: Unfair or deceptive acts; provides case-by-case enforcement basis for fraudulent deepfakes only
+- State laws fill some gaps but create inconsistent national coverage
 
-**Key gap:** No federal framework for transparency, watermarking, or authentication. Absence of federal law means victim redress depends entirely on state of residence.
+**Four-criterion score: 0/4** — No transparency mandate, no watermarking mandate, no platform accountability (Section 230), no cross-border mechanism.
+
+**Primary gap:** Absence of federal law means victim redress depends entirely on state of residence, and cross-state cases have no clear legal path.
 
 ---
 
 ### United States — California
 
-**Primary statutes:**
-- AB 730 (2019): First U.S. deepfake law; prohibits distribution of deepfake political ads within 60 days of election without disclosure
-- AB 602 (2023): Creates civil cause of action for non-consensual deepfake intimate imagery; right to injunctive relief and damages
-- SB 926 (2024): Extends AB 602 protections and increases platform obligations for removal
+**Statutes:** AB 730 (2019) | AB 602 (2023) | SB 926 (2024)
 
-**Strengths:** Comprehensive civil remedy for non-consensual intimate deepfakes; political disclosure requirement.
+- AB 730: First U.S. deepfake law; requires disclosure labels on deepfake political ads within 60 days of election
+- AB 602: Civil cause of action for non-consensual deepfake intimate imagery; injunctive relief and damages
+- SB 926: Extends AB 602; increases platform removal obligations
 
-**Gaps:** Does not address commercial fraud, authentication bypass, or AI system watermarking. Platform safe harbors under Section 230 still limit third-party liability.
+**Four-criterion score: 1/4** — Partial transparency (political ads only); no watermarking; partial platform accountability (Section 230 still limits); no cross-border.
+
+**Gap:** Does not address commercial fraud, authentication bypass, or AI system watermarking. Platform safe harbor under Section 230 still applies.
 
 ---
 
 ### United States — Texas
 
-**Primary statute:** HB 4337 (2023) — criminalizes creation/distribution of deepfakes depicting sexual conduct without consent.
+**Statute:** HB 4337 (2023) — Criminal prohibition on deepfakes depicting sexual conduct without consent.
 
-**Strengths:** Criminal penalties (Class A misdemeanor, up to 1 year; enhanced penalties for minors).
+**Four-criterion score: 0/4** — No transparency, no watermarking, no platform accountability, no cross-border.
 
-**Gaps:** Narrower scope than California; no civil remedy; no disclosure requirements; does not address political deepfakes or fraud.
+**Gap:** Narrowest scope of any reviewed jurisdiction. Criminal statute only; no civil remedy; no political deepfake provisions.
 
 ---
 
@@ -65,66 +68,83 @@ The EU AI Act comes closest to addressing all four, but its watermarking and tra
 
 **Primary instrument:** Regulation (EU) 2024/1689 — Artificial Intelligence Act
 
-**Relevant provisions:**
-- Article 50: Transparency obligations for AI systems that generate or manipulate content; providers must ensure outputs are labeled as artificially generated or manipulated
-- Articles 51–55: General-purpose AI (GPAI) model obligations; models with systemic risk (training compute > 10²⁵ FLOPs) face enhanced requirements including adversarial testing and incident reporting
-- Annex III: High-risk AI system categories; biometric identification systems (relevant to deepfake authentication bypass) are classified as high-risk
+**Key provisions:**
+- *Article 50:* Providers of AI systems generating synthetic audio, video, or image content must ensure outputs are labeled as AI-generated; providers of general-purpose AI systems must watermark synthetically generated content
+- *Articles 51–55:* GPAI models with systemic risk (>10²⁵ training FLOPs) face enhanced requirements including adversarial testing, incident reporting, and cybersecurity obligations
+- *Annex III:* Biometric identification systems classified as high-risk — relevant to deepfake authentication bypass attacks (§5.2 of the paper)
 
-**Enforcement:**
-- EU AI Office (established 2024) has primary enforcement authority for GPAI models
-- National Competent Authorities (one per member state) enforce for other AI systems
-- Non-compliance penalties: up to €35 million or 7% of global annual turnover
+**Enforcement timeline:**
+| Date | Obligation |
+|---|---|
+| February 2025 | Prohibitions on unacceptable-risk AI in force |
+| August 2025 | GPAI obligations in force |
+| August 2026 | Full high-risk AI obligations in force |
 
-**Timeline:**
-- February 2025: Prohibitions on unacceptable-risk AI entered force
-- August 2025: GPAI obligations entered force
-- August 2026: Full high-risk AI obligations enter force
+**Four-criterion score: 3.5/4** — Transparency: ✓ | Watermarking: ✓ | Platform accountability: ✓ | Cross-border: Partial (extraterritorial scope strong; informal-channel enforcement practically difficult)
 
-**Extraterritorial scope:** Applies to providers placing AI systems on the EU market regardless of establishment location; significant extraterritorial reach.
-
-**Key gap:** Enforcement against non-EU providers serving EU users through informal channels (social media, peer-to-peer) is practically difficult.
+**Gap:** Enforcement against non-EU providers serving EU users through informal channels (peer-to-peer, encrypted messaging) remains practically challenging. Phased enforcement means full obligation coverage is still being implemented.
 
 ---
 
 ### China
 
 **Primary instruments:**
-- *Provisions on the Administration of Deep Synthesis Internet Information Services* (CAC, effective March 2022): Requires labeling of AI-generated content; prohibits using deep synthesis technology to spread false information or impersonate individuals; real-name registration for providers
-- *Measures for the Administration of Generative Artificial Intelligence Services* (CAC, effective August 2023): Extends obligations to generative AI generally; requires training data compliance; prohibits generation of false information
+- *Provisions on Deep Synthesis Internet Information Services* (CAC, effective March 2022)
+- *Measures for the Administration of Generative Artificial Intelligence Services* (CAC, effective August 2023)
 
-**Strengths:** Comprehensive content labeling requirements; strong platform liability; administrative penalties.
+**Requirements:** Mandatory content labeling; real-name registration for providers; platform liability; prohibited uses include political manipulation, impersonation, and fraud; training data compliance obligations.
 
-**Limitations noted in paper:** Enforcement has been applied inconsistently and particularly in politically sensitive contexts; the framework's breadth may reflect content control objectives beyond deepfake safety. Limited independent transparency on enforcement statistics.
+**Four-criterion score: 3/4** — Transparency: ✓ | Watermarking: ✓ (label requirement functions as watermark-equivalent) | Platform accountability: ✓ | Cross-border: ✗ (domestic focus)
+
+**Limitation:** Enforcement applied inconsistently and primarily in politically sensitive contexts per international observers. The framework's breadth may reflect content control objectives beyond deepfake safety. Limited independent enforcement transparency.
 
 ---
 
 ### United Kingdom
 
 **Primary instruments:**
-- Online Safety Act 2023: Creates positive duties on regulated user-to-user services to prevent illegal content (which includes CSAM deepfakes and fraud-enabling deepfakes); requires risk assessments and content moderation
-- Criminal Justice Bill 2024: Creates specific offense of sharing intimate deepfake images without consent; carries up to 2 years imprisonment
+- *Online Safety Act 2023:* Positive duties on user-to-user platforms to prevent illegal content (includes CSAM deepfakes and fraud-enabling deepfakes); risk assessment and moderation obligations; regulated by Ofcom
+- *Criminal Justice Bill 2024:* Sharing intimate deepfake images without consent — criminal offense; up to 2 years imprisonment
 
-**Enforcement body:** Ofcom regulates Online Safety Act compliance; CPS prosecutes criminal offenses.
+**Four-criterion score: 2/4** — Transparency: Partial | Watermarking: ✗ | Platform accountability: ✓ | Cross-border: ✗
 
-**Key gap:** No general transparency or watermarking requirement for AI-generated content; no equivalent of EU AI Act's broad disclosure obligations.
+**Gap:** No general transparency or watermarking requirement for AI-generated content. The Online Safety Act creates strong platform duties but does not mandate synthetic content disclosure equivalent to EU AI Act Article 50.
 
 ---
 
-## Cross-Jurisdictional Gaps
+### Australia
 
-The following gaps apply across all reviewed jurisdictions:
+**Status:** No dedicated deepfake legislation as of early 2026.
 
-| Gap | Description | Affected Jurisdictions |
+**Applicable existing law:** Existing criminal law applies to some deepfake misuse; eSafety Commissioner has jurisdiction over certain harmful online content; no deepfake-specific transparency, watermarking, or platform accountability requirements.
+
+**Four-criterion score: 0/4**
+
+**Status:** Australian Law Reform Commission reviewing deepfake harms as of 2026. Government has acknowledged the regulatory gap.
+
+---
+
+## Cross-Jurisdictional Gap Table
+
+The following gaps exist across all reviewed jurisdictions, regardless of individual framework maturity:
+
+| Gap | Description | Affected jurisdictions |
 |---|---|---|
-| Transnational enforcement | Content generated in one jurisdiction, hosted in a second, consumed in a third; no binding international coordination mechanism | All |
-| Authentication bypass | No jurisdiction explicitly addresses deepfake attacks on KYC/biometric authentication systems | All |
-| Training data consent | No jurisdiction requires consent for use of individual likenesses in generative model training data | All |
-| Watermarking standards | Only EU mandates watermarking; no international interoperability standard exists | All except EU |
-| Provenance chain | C2PA standard voluntary; no jurisdiction mandates cryptographic provenance tracking | All |
-| Detection mandate | No jurisdiction requires platforms to deploy deepfake detection systems | All |
+| Transnational enforcement | No binding international coordination mechanism | All |
+| Authentication bypass | No jurisdiction explicitly addresses deepfake attacks on KYC/biometric authentication | All |
+| Training data consent | No jurisdiction requires consent for use of likenesses in generative model training | All |
+| Watermarking interoperability | No international standard; EU and China have domestic requirements that are incompatible | All |
+| Cryptographic provenance | C2PA standard is voluntary; no jurisdiction mandates it | All |
+| Platform detection mandate | No jurisdiction requires platforms to deploy detection systems | All |
+| Civil redress for fraud victims | Most jurisdictions lack specific civil redress for deepfake-enabled financial fraud | All except CA (limited) |
 
 ---
 
-## Key Recommendation from This Analysis
+## Primary Recommendation (from §10.3)
 
-The most significant governance gap is not within any jurisdiction but *between* jurisdictions. A binding international framework — developed through the UN, OECD, or a dedicated multilateral body — establishing minimum standards for (1) transparency/labeling, (2) provenance tracking, (3) platform detection obligations, and (4) mutual legal assistance in cross-border enforcement is the highest-priority governance intervention not yet underway.
+The most significant governance gap is not within any jurisdiction but between them. An international framework — developed through the UN, OECD, or a dedicated multilateral body — establishing binding minimum standards in four areas is the highest-priority governance intervention not yet underway:
+
+1. **Transparency and labeling** — minimum disclosure standards with cross-border recognition
+2. **Watermarking interoperability** — a common technical standard recognizable across jurisdictions
+3. **Platform detection obligations** — minimum detection deployment requirements with mutual recognition of certified systems
+4. **Mutual legal assistance** — cross-border enforcement cooperation for deepfake-enabled crimes
